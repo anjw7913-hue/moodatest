@@ -1,6 +1,12 @@
-
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>mooda</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
+html, body {width:100%; height:100%; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;}
 
 :root {
   --m-bg: #FDFAF7;
@@ -21,6 +27,11 @@
 
 .wrap{background:var(--m-surface);border-radius:36px;padding:14px;max-width:390px;margin:0 auto;}
 .phone{background:var(--m-bg);border-radius:28px;overflow:hidden;min-height:740px;display:flex;flex-direction:column;border:0.5px solid var(--m-border);}
+@media (max-width: 480px) {
+  body { background: var(--m-bg); }
+  .wrap { padding: 0; border-radius: 0; max-width: 100%; height: 100vh; background: var(--m-bg); display: flex; flex-direction: column; }
+  .phone { border-radius: 0; border: none; min-height: 100%; height: 100%; flex: 1; }
+}
 
 .sbar{padding:16px 22px 0;display:flex;justify-content:space-between;align-items:center;}
 .sbar-t{font-size:13px;font-weight:500;color:var(--m-text);}
@@ -160,7 +171,8 @@
 .cal-cell.today .day-circle{border:2px solid var(--m-primary);}
 .cal-cell.today .day-lbl{color:var(--m-primary);font-weight:600;}
 </style>
-
+</head>
+<body>
 <div class="wrap">
 <div class="phone">
 
@@ -565,3 +577,5 @@ function renderCalendar() {
   }
 }
 </script>
+</body>
+</html>
